@@ -47,12 +47,17 @@ namespace APIRest
 
         private async void Update(object sender, EventArgs e)
         {
-
+            var post = posts[0];
+            post.Title += "Idílio Casimiro";
+            var json_post = JsonConvert.SerializeObject(post);
+            await client.PutAsync(Url + "/" + post.ID, new StringContent(json_post));
         }
 
         private async void Delete(object sender, EventArgs e)
         {
-
+            var post = posts[0];
+            await client.DeleteAsync(Url + "/" + post.ID);
+            posts.Remove(post);
         }
     }
 
