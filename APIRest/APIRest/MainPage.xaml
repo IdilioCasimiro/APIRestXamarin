@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:APIRest"
+             x:Class="APIRest.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="StartAndExpand"
+                     VerticalOptions="Start">
+            <Button Text="ADD" Clicked="Add"/>
+            <Button Text="UPDATE" Clicked="Update"/>
+            <Button Text="DELETE" Clicked="Delete"/>
+        </StackLayout>
+        <StackLayout>
+            <ListView x:Name="ListaPosts">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
